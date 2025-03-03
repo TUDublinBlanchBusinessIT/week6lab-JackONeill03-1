@@ -28,8 +28,7 @@ class productController extends AppBaseController
         }
 
         public function additem($productid)
-        
-    {
+        {
             if (Session::has('cart')) {
                 $cart = Session::get('cart');
                 if (isset($cart[$productid])) {
@@ -44,7 +43,7 @@ class productController extends AppBaseController
             }
             Session::put('cart', $cart);
             return Response::json(['success'=>true,'total'=>array_sum($cart)],200);
-    }    
+        } 
 
 
     /**

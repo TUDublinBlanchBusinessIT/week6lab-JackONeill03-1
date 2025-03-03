@@ -23,16 +23,14 @@
         </div>
     @endforeach
     </div>
-@endsection('content')
-
-<script>
+    <script>
     $(".bth,.addItem").click(function() {
     var total = parseInt($('#shoppingcart').text());
     var i=$(this).val();
     $('#shoppingcart').text(total);
     $.ajax({
       type: "get",
-      url: "{{url('products/additem/')}}" + "/" + i,
+      url: "{{url('product/additem/')}}" + "/" + i,
       type: "GET",
       success: function(response) {
           total=total+1;
@@ -44,3 +42,4 @@
     });
 });
 </script>
+@endsection('content')
